@@ -1,7 +1,7 @@
 import * as vscode from 'vscode';
 // import * as axios from 'axios';
 import { MyWebviewViewProvider } from './view/MyWebviewViewProvider';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
 
 // agrega el .env
 dotenv.config();
