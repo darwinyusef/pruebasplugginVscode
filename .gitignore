@@ -1,0 +1,16 @@
+.env
+./env
+env
+.node_modules
+node_modules
+./node_modules
+*.log
+*.tsbuildinfo
+*.js
+*.js.map
+*.d.ts
+*.d.ts.map
+*.tgz
+*.tgz.*
+*.zip
+*.zip.*

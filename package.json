@@ -1,0 +1,109 @@
+{
+  "name": "acexfirst",
+  "displayName": "acexfirst",
+  "description": "Aquicreamos Ext First",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.99.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "configuration": {
+      "title": "AquiCreamos Advice all Config",
+      "properties": {
+        "aquicreamoscode.apiUrl": {
+          "type": "string",
+          "default": "https://api.aquicreamos.com/api/v1",
+          "description": "URL de la API para consumir servicios"
+        },
+        "aquicreamoscode.open.advice": {
+          "type": "number",
+          "default": 10,
+          "description": "Habilitar la cantidad de consejos semanales"
+        },
+        "aquicreamoscode.open.days": {
+          "type": "number",
+          "default": 4,
+          "description": "Habilitar la cantidad de dias de la semana"
+        },
+        "aquicreamoscode.open.hours": {
+          "type": "number",
+          "default": 16,
+          "description": "Activar la apartir de que horario recibir los consejos"
+        },
+        "aquicreamoscode.enableLogs": {
+          "type": "boolean",
+          "default": true,
+          "description": "Habilitar o deshabilitar logs"
+        }
+      }
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "mySidebar",
+          "title": "Sidebar Left",
+          "icon": "media/icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "mySidebar": [
+        {
+          "type": "webview",
+          "id": "webviewLeft",
+          "name": "Webview Left",
+          "icon": "media/icon.png"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "aquicreamos.bienvenida",
+        "title": "Aquicreamos Runner: Iniciamos la aplicación"
+      },
+      {
+        "command": "aquicreamos.evaluarCodigo",
+        "title": "Aquicreamos Runner: Validate code"
+      },
+      {
+        "command": "aquicreamos.configurar",
+        "title": "Aquicreamos Runner: Configuraciones"
+      },
+      {
+        "command": "aquicreamos.buscarComentarios",
+        "title": "Aquicreamos Runner: Buscar Comentarios"
+      },
+      {
+        "command": "aquicreamos.buscarTodosComentarios",
+        "title": "Aquicreamos Runner: Buscar Todos Comentarios"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.99.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "dotenv": "^16.4.7"
+  }
+}
